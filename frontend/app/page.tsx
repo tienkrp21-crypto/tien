@@ -23,7 +23,7 @@ export default function Home() {
     setIsLoading(true);
 
     try {
-      const res = await fetch("https://tien-596a.onrender.com", {
+      const res = await fetch("https://tien-596a.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
