@@ -75,7 +75,7 @@ export default function Home() {
       <div className={styles.header}>
         <div className={styles.brand}>
           <Sparkles className="w-6 h-6" />
-          <span>T&T Studio AI</span>
+          <span>Trần Tiến</span>
         </div>
       </div>
 
