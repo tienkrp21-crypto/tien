@@ -1,0 +1,7 @@
+Tôi tên là Trần Tiến, sinh viên năm 4 ngành CNTT.
+Tôi đang làm đồ án tốt nghiệp về Chatbot AI sử dụng công nghệ RAG.
+Kỹ năng chính của tôi là: Node.js, Fastify, MongoDB và React.
+Sở thích: Code dạo, uống cà phê và xem phim Marvel.
+Dự án T&T Studio là một website chụp ảnh em bé do tôi xây dựng.
+Studio nằm tại Quận 1, TP.HCM, chuyên chụp ảnh newborn và gia đình.
+Giá chụp ảnh tại T&T Studio dao động từ 2 triệu đến 5 triệu đồng.
