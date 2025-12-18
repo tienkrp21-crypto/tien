@@ -104,17 +104,25 @@ fastify.post('/api/chat', async (request, reply) => {
     }
 });
 
-// --- KHỞI ĐỘNG ---
+// --- KHỞI ĐỘNG (ĐÃ SỬA CHO RENDER) ---
 const start = async () => {
     try {
         await connectDB();
-        await client.connect(); // Kết nối thêm cái client cho Vector Search
-        await fastify.listen({ port: process.env.PORT || 8000 });
-        console.log(`Server RAG chạy tại: http://localhost:${process.env.PORT || 8000}`);
+        await client.connect(); // Kết nối client Vector Search
+        
+        // QUAN TRỌNG: Phải có host: '0.0.0.0' thì Render mới nhận
+        await fastify.listen({ 
+            port: process.env.PORT || 8000, 
+            host: '0.0.0.0' 
+        });
+        
+        console.log(`Server RAG đang chạy tại port: ${process.env.PORT || 8000}`);
     } catch (err) {
         fastify.log.error(err);
         process.exit(1);
     }
 };
+
+start();
 
 start();
