@@ -1,25 +1,19 @@
-name: Debug Session
+name: Main Debug
 
+# Chạy khi bạn push code HOẶC bấm nút thủ công
 on: 
-  workflow_dispatch: # Cho phép bấm nút chạy thủ công
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  debug:
+  debug-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      # Cài đặt môi trường (ví dụ Node.js) nếu cần test
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          
-      - name: Install dependencies
-        run: npm install
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      # Bước này sẽ dừng quy trình và cho bạn link SSH
-      - name: Setup tmate session
+      # Bước này sẽ tạo kết nối SSH để bạn vào soi lỗi
+      # Nó sẽ treo máy ở đây cho đến khi bạn tắt, hoặc hết giờ (6 tiếng)
+      - name: Start SSH Session
         uses: mxschmitt/action-tmate@v3
