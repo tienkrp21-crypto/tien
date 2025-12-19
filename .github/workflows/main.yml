@@ -1,9 +1,8 @@
 name: Main Debug
 
-# Chạy khi bạn push code HOẶC bấm nút thủ công
-on: 
+on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -13,7 +12,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Bước này sẽ tạo kết nối SSH để bạn vào soi lỗi
-      # Nó sẽ treo máy ở đây cho đến khi bạn tắt, hoặc hết giờ (6 tiếng)
       - name: Start SSH Session
         uses: mxschmitt/action-tmate@v3
