@@ -79,6 +79,7 @@ fastify.post('/api/chat', async (request, reply) => {
         // C. TẠO PROMPT (Kèm dữ liệu tìm được)
         const systemPrompt = `Bạn là trợ lý ảo của T&T Studio. 
                         Dựa vào thông tin này: ... (code cũ) ...
+                        ${context}
                         YÊU CẦU TRÌNH BÀY:
                         - Trả lời ngắn gọn, súc tích.
                         - Sử dụng gạch đầu dòng (-) hoặc số thứ tự (1., 2.) để liệt kê ý.
@@ -122,7 +123,5 @@ const start = async () => {
         process.exit(1);
     }
 };
-
-start();
 
 start();
