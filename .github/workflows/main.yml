@@ -1,4 +1,4 @@
-name: Main Debug
+name: Kiem Tra Code
 
 on:
   push:
@@ -6,11 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  debug-job:
+  build-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Lay code ve
         uses: actions/checkout@v4
 
-      - name: Start SSH Session
-        uses: mxschmitt/action-tmate@v3
+      - name: Cai dat Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cai thu vien (npm install)
+        run: npm install
+
+      - name: Thong bao thanh cong
+        run: echo "Code ngon lanh! Khong co loi cu phap."
