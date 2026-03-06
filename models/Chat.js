@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-// Định nghĩa khuôn mẫu cho 1 tin nhắn
 const chatSchema = new mongoose.Schema({
-  role: { type: String, required: true }, // 'user' (bạn) hoặc 'assistant' (AI)
-  content: { type: String, required: true }, // Nội dung tin nhắn
-  createdAt: { type: Date, default: Date.now } // Thời gian (tự động lấy giờ hiện tại)
+    role: { type: String, required: true }, // 'user' hoặc 'assistant'
+    content: { type: String, required: true },
+    sessionId: { type: String, required: true, index: true },
+    createdAt: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Chat', chatSchema);
